@@ -1,25 +1,23 @@
 import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
-import useTheme from '@mui/material/styles/useTheme';
-import useMediaQuery from '@mui/material/useMediaQuery';
 
+import useCheckScreen from '../useCheckScreen';
 import usePath from '../usePath';
 import { ReactComponent as Logo } from '../../images/logo.svg';
 import { ReactComponent as NavButton } from '../../images/navButton.svg';
-import useStyle from './Nav.style';
+import useStyle, { StyledNav } from './Nav.style';
 
 function Nav() {
   const classes = useStyle();
   const path = usePath();
   const navigate = useNavigate();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useCheckScreen('md', 'down');
 
   const keyword = useSelector((state) => state.search.keyword);
   const pageSize = useSelector((state) => state.search.pageSize);
+  const tags = useSelector((state) => state.tags);
 
   const shouldActiveTab = useCallback((tabValues) => tabValues.includes(path[0]), [path]);
 
@@ -44,16 +42,17 @@ function Nav() {
     <div className={classes.container}>
       <div className={classes.logo}><Logo /></div>
       <div className={classes.navBar}>
-        <List className={classes.navButtons} component="nav">
+        <StyledNav component="nav">
           <ListItemButton onClick={toHome} className={shouldActiveTab(['', 'result']) ? classes.active : ''}>
             <NavButton />
             {!isMobile && shouldActiveTab(['', 'result']) && <p>Home</p>}
           </ListItemButton>
           <ListItemButton onClick={toTag} className={shouldActiveTab(['tags']) ? classes.active : ''}>
+            <span className={tags.length ? '' : classes.noTagData} />
             <NavButton />
             {!isMobile && shouldActiveTab(['tags']) && <p>Tags</p>}
           </ListItemButton>
-        </List>
+        </StyledNav>
       </div>
 
     </div>

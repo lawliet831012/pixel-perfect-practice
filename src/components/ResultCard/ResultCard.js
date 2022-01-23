@@ -23,7 +23,7 @@ function ResultCard({
   return (
     <div className={classes.container}>
       <div className={classes.resultIMG}>
-        {!isIMGLoaded && <Skeleton variant="rectangular" height={146} />}
+        {!isIMGLoaded && <Skeleton variant="rectangular" />}
         <img
           onLoad={onIMGLoad}
           onError={onIMGError}

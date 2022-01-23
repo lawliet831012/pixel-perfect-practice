@@ -1,11 +1,12 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import TextField from '@mui/material/TextField';
+
 import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 import Divider from '@mui/material/Divider';
 
-import useStyle, { StyledButton } from './Home.style';
+import useCheckScreen from '../components/useCheckScreen';
+import useStyle, { StyledButton, StyledInput } from './Home.style';
 
 const sliderMarker = [{
   value: 0,
@@ -41,6 +42,7 @@ function Home() {
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState('');
   const [sliderValue, setSliderValue] = useState(0);
+  const isMobile = useCheckScreen('md', 'down');
 
   const onValueChange = useCallback(({ currentTarget }) => {
     setSearchValue(currentTarget.value);
@@ -62,8 +64,7 @@ function Home() {
     <div className={classes.container}>
       <Typography variant="h2">Search</Typography>
       <form onSubmit={onSubmit}>
-        <TextField
-          className={classes.input}
+        <StyledInput
           variant="outlined"
           fullWidth
           placeholder="keyword"
@@ -72,7 +73,7 @@ function Home() {
           value={searchValue}
         />
 
-        <Divider />
+        {!isMobile && <Divider />}
 
         <Typography variant="h2"># Of Results Per Page</Typography>
 
@@ -91,7 +92,7 @@ function Home() {
 
         <Divider />
 
-        <StyledButton type="submit">SEARCH</StyledButton>
+        <StyledButton type="submit" fullWidth>SEARCH</StyledButton>
 
       </form>
     </div>

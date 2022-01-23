@@ -13,7 +13,7 @@ const makeRestartAble = (saga) => function* generater() {
           try {
             yield call(saga);
           } catch (error) {
-            console.error(`uncaught exception: ${error}`);
+            // console.error(`uncaught exception: ${error}`);
           }
           yield delay(1000);
         }

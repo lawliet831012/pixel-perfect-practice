@@ -10,11 +10,9 @@ export default makeStyles((theme) => ({
     height: '100vh',
     left: 0,
     top: 0,
-
   },
   outlet: {
     [theme.breakpoints.down('md')]: {
-      paddingTop: 70,
       paddingBottom: 66,
     },
     [theme.breakpoints.up('md')]: {

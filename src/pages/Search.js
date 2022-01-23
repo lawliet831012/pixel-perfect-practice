@@ -2,7 +2,10 @@ import React, { useEffect, useMemo, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import CircularProgress from '@mui/material/CircularProgress';
 
+import useCheckScreen from '../components/useCheckScreen';
 import InfiniteLoading from '../components/InfiniteLoading/InfiniteLoading';
 import ResultCard from '../components/ResultCard';
 import * as searchActions from '../redux/actions/searchActions';
@@ -15,6 +18,7 @@ function Search() {
   const params = useParams();
   const navigate = useNavigate();
   const { pageSize, keyword } = params;
+  const isMobile = useCheckScreen('md', 'down');
 
   const search = useSelector((state) => state.search);
   const { result, resultPage, keyword: prevKeyword } = search;
@@ -41,9 +45,12 @@ function Search() {
 
   return (
     <div className={classes.container}>
-      <PageBackBar text="Results" />
-      <Grid container spacing={2} className={classes.cardsContainer}>{renderResultCrads}</Grid>
-      <InfiniteLoading onLoadMore={onLoadMore} isEndOfData={resultPage === -1} />
+      <PageBackBar text={isMobile ? 'Home Page' : 'Results'} />
+      {isMobile && <Typography variant="h2">Results</Typography>}
+      <Grid container spacing={2} className={classes.cardsContainer}>
+        {!resultPage ? <CircularProgress color="inherit" /> : renderResultCrads}
+      </Grid>
+      <InfiniteLoading onLoadMore={onLoadMore} isEndOfData={resultPage < 1} />
     </div>
   );
 }

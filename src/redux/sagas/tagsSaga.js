@@ -10,7 +10,7 @@ const initailize = function* initailizeTagData() {
     const newState = response.data.sort((a, b) => b.count - a.count);
     yield put(tagsActions.update(newState));
   } catch (error) {
-    console.error('Error occured when initailize() in tagSaga: ', error);
+    // console.error('Error occured when initailize() in tagSaga: ', error);
   }
 };
 

@@ -3,7 +3,7 @@ import makeStyles from '@mui/styles/makeStyles';
 export default makeStyles((theme) => ({
   container: {
     width: 150,
-    margin: '18px 12px',
+    margin: 12,
     '& > p': {
       marginTop: 10,
       width: '100%',

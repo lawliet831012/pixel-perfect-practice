@@ -22,7 +22,7 @@ const initailize = function* initailizeTagData({ payload }) {
     };
     yield put(searchActions.update(newState));
   } catch (error) {
-    console.error('Error occured when initailize() in searchSaga: ', error);
+    // console.error('Error occured when initailize() in searchSaga: ', error);
   }
 };
 
@@ -43,7 +43,7 @@ const nextPage = function* getNextResultPage() {
     };
     yield put(searchActions.update(newState));
   } catch (error) {
-    console.error('Error occured when nextPage() in searchSaga: ', error);
+    // console.error('Error occured when nextPage() in searchSaga: ', error);
   }
 };
 

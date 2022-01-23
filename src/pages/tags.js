@@ -4,6 +4,8 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import CircularProgress from '@mui/material/CircularProgress';
 
+import useCheckScreen from '../components/useCheckScreen';
+import PageBackBar from '../components/PageBackBar';
 import TagCard from '../components/TagCard';
 import * as tagsActions from '../redux/actions/tagsActions';
 import useStyle from './Tags.style';
@@ -12,6 +14,7 @@ function Tags() {
   const classes = useStyle();
   const dispatch = useDispatch();
 
+  const isMobile = useCheckScreen('md', 'down');
   const tags = useSelector((state) => state.tags);
 
   useEffect(() => {
@@ -28,8 +31,9 @@ function Tags() {
 
   return (
     <div className={classes.container}>
+      {isMobile && <PageBackBar text="Home Page" /> }
       <Typography variant="h2">Tags</Typography>
-      <Grid container spacing={2} className={classes.cardsContainer}>
+      <Grid container spacing={2}>
         {!tags.length ? <CircularProgress color="inherit" /> : renderTagCards}
       </Grid>
     </div>

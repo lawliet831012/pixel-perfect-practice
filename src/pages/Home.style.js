@@ -1,6 +1,7 @@
 import makeStyles from '@mui/styles/makeStyles';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 export default makeStyles((theme) => ({
   container: {
@@ -17,10 +18,13 @@ export default makeStyles((theme) => ({
     },
     '& hr': {
       margin: '30px 0',
+      [theme.breakpoints.down('md')]: {
+        marginTop: 218,
+      },
     },
-  },
-  input: {
-    marginBottom: 30,
+    [theme.breakpoints.down('md')]: {
+      paddingTop: 70,
+    },
   },
   resultNumber: {
     marginRight: 10,
@@ -28,10 +32,19 @@ export default makeStyles((theme) => ({
   },
 }));
 
+export const StyledInput = styled(TextField)(({ theme }) => ({
+  [theme.breakpoints.down('md')]: {
+    marginBottom: 28,
+  },
+}));
+
 export const StyledButton = styled(Button)(({ theme }) => ({
-  position: 'fixed',
-  bottom: 87,
-  width: 343,
+  marginTop: 335,
+  maxWidth: 343,
   fontWeight: 'bold',
   fontSize: theme.palette.text.small,
+  [theme.breakpoints.down('md')]: {
+    position: 'fixed',
+    bottom: 90,
+  },
 }));

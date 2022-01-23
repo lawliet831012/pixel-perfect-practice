@@ -1,4 +1,6 @@
 import makeStyles from '@mui/styles/makeStyles';
+import { styled } from '@mui/material/styles';
+import List from '@mui/material/List';
 
 export default makeStyles((theme) => ({
   container: {
@@ -9,9 +11,12 @@ export default makeStyles((theme) => ({
     position: 'fixed',
     top: 37,
     left: 23,
-    width: 35,
-    height: 15,
+    '& > svg': {
+      width: 35,
+      height: 15,
+    },
     [theme.breakpoints.down('md')]: {
+      position: 'absolute',
       top: 28,
       left: 21,
     },
@@ -30,19 +35,14 @@ export default makeStyles((theme) => ({
       height: 66,
     },
   },
-  navButtons: {
-    display: 'flex',
-    alignContent: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-    '& > div': {
-      height: 62,
-      justifyContent: 'center',
-    },
-    [theme.breakpoints.down('md')]: {
-      flexDirection: 'row',
-    },
+  noTagData: {
+    position: 'absolute',
+    right: 10,
+    top: 16,
+    height: 0,
+    width: 0,
+    border: '2px solid #00D1FF',
+    borderRadius: 1,
   },
   active: {
     '& path': {
@@ -54,5 +54,22 @@ export default makeStyles((theme) => ({
       position: 'absolute',
       bottom: 0,
     },
+  },
+}));
+
+export const StyledNav = styled(List)(({ theme }) => ({
+  display: 'flex',
+  alignContent: 'center',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+  '& > div': {
+    height: 62,
+    justifyContent: 'center',
+  },
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'row',
+    width: 150,
+    margin: 'auto',
   },
 }));

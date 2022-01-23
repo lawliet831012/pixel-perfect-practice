@@ -24,7 +24,7 @@ const initailize = function* initailizeTagData() {
     };
     yield put(followerActions.update(newState));
   } catch (error) {
-    console.error('Error occured when initailize() in followerSaga: ', error);
+    // console.error('Error occured when initailize() in followerSaga: ', error);
   }
 };
 
@@ -43,7 +43,7 @@ const nextPage = function* getNextPageByFollowerType({ payload }) {
     };
     yield put(followerActions.update(newState));
   } catch (error) {
-    console.error('Error occured when nextPage() in followerSaga: ', error);
+    // console.error('Error occured when nextPage() in followerSaga: ', error);
   }
 };
 
