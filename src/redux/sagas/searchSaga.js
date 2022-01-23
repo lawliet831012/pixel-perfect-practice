@@ -14,6 +14,7 @@ const initailize = function* initailizeTagData({ payload }) {
 
     const response = yield call(getResult, { page, pageSize, keyword });
 
+    // if totalPages quals to 0, set to end of data
     const newState = {
       keyword,
       pageSize,
@@ -34,7 +35,7 @@ const nextPage = function* getNextResultPage() {
     } = currentSearch;
     const page = resultPage + 1;
     const response = yield call(getResult, { pageSize, page, keyword });
-
+    // link with previous data
     const newState = {
       keyword,
       pageSize,

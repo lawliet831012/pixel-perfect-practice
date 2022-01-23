@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// create a instance for common api config
 const instance = axios.create({
   timeout: 3000,
 });

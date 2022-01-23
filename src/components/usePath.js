@@ -4,7 +4,7 @@ function usePath() {
   const location = useLocation();
 
   const path = location.pathname.split('/');
-
+  // remove first empty string
   path.shift();
 
   return path;

@@ -19,6 +19,7 @@ function Nav() {
   const pageSize = useSelector((state) => state.search.pageSize);
   const tags = useSelector((state) => state.tags);
 
+  // use style to change svg color
   const shouldActiveTab = useCallback((tabValues) => tabValues.includes(path[0]), [path]);
 
   const toHome = useCallback(() => {

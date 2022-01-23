@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { StyledButton } from './InfiniteLoading.style';
 
 function InfiniteLoading({ onLoadMore, isEndOfData }) {
-  // const classes = useStyle();
   return !isEndOfData && (
   <StyledButton onClick={onLoadMore}>More</StyledButton>
   );

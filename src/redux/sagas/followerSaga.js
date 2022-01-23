@@ -16,6 +16,7 @@ const initailize = function* initailizeTagData() {
       call(getFollowers, { page, pageSize }),
       call(getFriends, { page, pageSize }),
     ]);
+    // if totalPages quals to 0, set to end of data
     const newState = {
       followers: followerRes.data.data,
       followersPage: followerRes.data.totalPages === 0 ? -1 : 1,
@@ -37,6 +38,7 @@ const nextPage = function* getNextPageByFollowerType({ payload }) {
     ]);
     const page = currentPage + 1;
     const response = yield call(getDataFunction, { pageSize, page });
+    // link with previous data
     const newState = {
       [payload]: [...currentData, ...response.data.data],
       [`${payload}Page`]: response.data.totalPages === page ? -1 : page,
