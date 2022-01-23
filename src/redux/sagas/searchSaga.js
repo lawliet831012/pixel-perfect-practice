@@ -7,6 +7,10 @@ import searchActionsType, * as searchActions from '../actions/searchActions';
 
 // when page === -1, means last page
 
+const isEOD = function isEndOfData(totalpage) {
+  return totalpage === 0 || totalpage === 1;
+};
+
 const initailize = function* initailizeTagData({ payload }) {
   try {
     const { pageSize, keyword } = payload;
@@ -19,7 +23,7 @@ const initailize = function* initailizeTagData({ payload }) {
       keyword,
       pageSize,
       result: response.data.data,
-      resultPage: response.data.totalPages === 0 ? -1 : 1,
+      resultPage: isEOD(response.data.totalPages) ? -1 : 1,
     };
     yield put(searchActions.update(newState));
   } catch (error) {

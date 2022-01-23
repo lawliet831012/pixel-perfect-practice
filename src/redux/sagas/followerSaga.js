@@ -9,6 +9,10 @@ const pageSize = 10;
 
 // when page === -1, means last page
 
+const isEOD = function isEndOfData(totalpage) {
+  return totalpage === 0 || totalpage === 1;
+};
+
 const initailize = function* initailizeTagData() {
   try {
     const page = 1;
@@ -19,9 +23,9 @@ const initailize = function* initailizeTagData() {
     // if totalPages quals to 0, set to end of data
     const newState = {
       followers: followerRes.data.data,
-      followersPage: followerRes.data.totalPages === 0 ? -1 : 1,
+      followersPage: isEOD(followerRes.data.totalPages) ? -1 : 1,
       friends: friendsRes.data.data,
-      friendsPage: friendsRes.data.totalPages === 0 ? -1 : 1,
+      friendsPage: isEOD(friendsRes.data.totalPages) ? -1 : 1,
     };
     yield put(followerActions.update(newState));
   } catch (error) {
