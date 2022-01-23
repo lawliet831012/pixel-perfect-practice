@@ -26,7 +26,7 @@ function Search() {
     if (resultPage === 0) dispatch(searchActions.initail({ pageSize, keyword }));
   }, [dispatch, keyword, navigate, pageSize, resultPage]);
 
-  const onLoadMore = useCallback(() => dispatch(searchActions.next()), []);
+  const onLoadMore = useCallback(() => dispatch(searchActions.next()), [dispatch]);
 
   const renderResultCrads = useMemo(() => result.map(({
     avater, name, username, id,

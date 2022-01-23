@@ -28,7 +28,8 @@
     "eject": "react-scripts eject",
     "_lint": "eslint --config ./.eslintrc.js --ext js --ext jsx",
     "lint": "yarn _lint ./src",
-    "lint-fix": "yarn _lint --fix ./src"
+    "lint-fix": "yarn _lint --fix ./src",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [

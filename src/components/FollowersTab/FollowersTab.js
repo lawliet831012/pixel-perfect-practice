@@ -31,8 +31,8 @@ function Friends() {
     setTabValue(newValue);
   }, []);
 
-  const onFollowerLoadMore = useCallback(() => dispatch(followerActions.next('followers')), []);
-  const onFriendsLoadMore = useCallback(() => dispatch(followerActions.next('friends')), []);
+  const onFollowerLoadMore = useCallback(() => dispatch(followerActions.next('followers')), [dispatch]);
+  const onFriendsLoadMore = useCallback(() => dispatch(followerActions.next('friends')), [dispatch]);
 
   const renderFollower = useMemo(() => followers.map(({
     avater, isFollowing, name, username, id,
