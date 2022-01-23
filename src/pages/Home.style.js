@@ -32,6 +32,6 @@ export const StyledButton = styled(Button)(({ theme }) => ({
   position: 'fixed',
   bottom: 87,
   width: 343,
-  // padding: '8px 10px',
+  fontWeight: 'bold',
   fontSize: theme.palette.text.small,
 }));

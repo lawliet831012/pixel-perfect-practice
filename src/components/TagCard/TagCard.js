@@ -10,7 +10,7 @@ function TagCard({ count, name }) {
     <div className={classes.container}>
       <div className={classes.cardBackground}><Typography variant="h2">{name}</Typography></div>
       <Typography variant="body1">{name}</Typography>
-      <Typography>
+      <Typography variant="body2">
         {count}
         {' '}
         result

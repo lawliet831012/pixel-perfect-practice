@@ -17,14 +17,14 @@ function Search() {
   const { pageSize, keyword } = params;
 
   const search = useSelector((state) => state.search);
-  const { result, resultPage } = search;
+  const { result, resultPage, keyword: prevKeyword } = search;
 
   useEffect(() => {
     // navigate back to home page if params is not valid
     if (Number.isNaN(pageSize) || !keyword) navigate('/');
     // if there are no cache data in redux, then initialize search result
-    if (resultPage === 0) dispatch(searchActions.initail({ pageSize, keyword }));
-  }, [dispatch, keyword, navigate, pageSize, resultPage]);
+    if (keyword !== prevKeyword) dispatch(searchActions.initail({ pageSize, keyword }));
+  }, [dispatch, keyword, navigate, pageSize, prevKeyword, resultPage]);
 
   const onLoadMore = useCallback(() => dispatch(searchActions.next()), [dispatch]);
 

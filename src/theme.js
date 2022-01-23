@@ -83,6 +83,7 @@ const theme = createTheme({
           borderRadius: '50%',
         },
         rail: {
+          height: 8,
           color: '#FFFFFF80',
         },
         mark: {

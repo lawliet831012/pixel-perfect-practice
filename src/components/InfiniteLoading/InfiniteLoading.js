@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '@mui/material/Button';
 
-import useStyle from './InfiniteLoading.style';
+import { StyledButton } from './InfiniteLoading.style';
 
 function InfiniteLoading({ onLoadMore, isEndOfData }) {
-  const classes = useStyle();
-  return isEndOfData ? '' : (
-    <div className={classes.container}>
-      <Button onClick={onLoadMore}>More</Button>
-    </div>
+  // const classes = useStyle();
+  return !isEndOfData && (
+  <StyledButton onClick={onLoadMore}>More</StyledButton>
   );
 }
 

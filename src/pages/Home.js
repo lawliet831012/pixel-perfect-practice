@@ -62,7 +62,15 @@ function Home() {
     <div className={classes.container}>
       <Typography variant="h2">Search</Typography>
       <form onSubmit={onSubmit}>
-        <TextField className={classes.input} variant="outlined" fullWidth placeholder="keyword" onChange={onValueChange} value={searchValue} />
+        <TextField
+          className={classes.input}
+          variant="outlined"
+          fullWidth
+          placeholder="keyword"
+          autoComplete="off"
+          onChange={onValueChange}
+          value={searchValue}
+        />
 
         <Divider />
 

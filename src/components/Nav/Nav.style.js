@@ -6,9 +6,11 @@ export default makeStyles((theme) => ({
   },
   logo: {
     zIndex: 100,
-    position: 'absolute',
+    position: 'fixed',
     top: 37,
     left: 23,
+    width: 35,
+    height: 15,
     [theme.breakpoints.down('md')]: {
       top: 28,
       left: 21,
@@ -34,6 +36,10 @@ export default makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
+    '& > div': {
+      height: 62,
+      justifyContent: 'center',
+    },
     [theme.breakpoints.down('md')]: {
       flexDirection: 'row',
     },
@@ -41,6 +47,12 @@ export default makeStyles((theme) => ({
   active: {
     '& path': {
       fill: theme.palette.common.white,
+    },
+    '& > p': {
+      margin: 0,
+      fontSize: theme.palette.text.min,
+      position: 'absolute',
+      bottom: 0,
     },
   },
 }));

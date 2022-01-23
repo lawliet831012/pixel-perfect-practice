@@ -2,10 +2,20 @@ import makeStyles from '@mui/styles/makeStyles';
 
 export default makeStyles((theme) => ({
   container: {
-    width: 174,
-    padding: 12,
+    width: 150,
+    margin: '18px 12px',
     '& > p': {
+      marginTop: 10,
       width: '100%',
+      fontSize: 14.9,
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+    },
+    '& > span': {
+      width: '100%',
+      fontSize: 11.17,
+      color: '#B2B2B2',
       whiteSpace: 'nowrap',
       overflow: 'hidden',
       textOverflow: 'ellipsis',

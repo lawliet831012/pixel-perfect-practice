@@ -21,11 +21,11 @@ export default makeStyles((theme) => ({
       paddingLeft: 80,
     },
     [theme.breakpoints.up('lg')]: {
-      paddingRight: 375,
+      paddingRight: (props) => (props.isTagsPage ? 0 : 375),
     },
   },
   friendsTab: {
-    position: 'absolute',
+    position: 'fixed',
     height: '100vh',
     right: 0,
     top: 0,
