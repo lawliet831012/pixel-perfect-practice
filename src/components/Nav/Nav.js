@@ -38,12 +38,15 @@ function Nav() {
   // console.log(path, ['tag'].includes(path[0]));
 
   return (
-    <div>
+    <div className={classes.container}>
       <div className={classes.logo}><Logo /></div>
-      <List className={classes.navButtons} component="nav">
-        <ListItemButton onClick={toHome} selected={shouldActiveTab(['', 'result'])}><NavButton /></ListItemButton>
-        <ListItemButton onClick={toTag} selected={shouldActiveTab(['tags'])}><NavButton /></ListItemButton>
-      </List>
+      <div className={classes.navBar}>
+        <List className={classes.navButtons} component="nav">
+          <ListItemButton onClick={toHome} className={shouldActiveTab(['', 'result']) ? classes.active : ''}><NavButton /></ListItemButton>
+          <ListItemButton onClick={toTag} className={shouldActiveTab(['tags']) ? classes.active : ''}><NavButton /></ListItemButton>
+        </List>
+      </div>
+
     </div>
   );
 }

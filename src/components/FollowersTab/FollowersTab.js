@@ -4,6 +4,7 @@ import React, {
 import { useDispatch, useSelector } from 'react-redux';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import InfiniteLoading from '../InfiniteLoading/InfiniteLoading';
 import * as followerActions from '../../redux/actions/followerActions';
@@ -60,18 +61,22 @@ function Friends() {
 
   return (
     <div className={classes.container}>
-      <Tabs value={tabValue} onChange={onTabChange} aria-label="basic tabs example">
-        <Tab label="Followers" />
-        <Tab label="Followering" />
+      <Tabs value={tabValue} onChange={onTabChange} className={classes.tabBar}>
+        <Tab className={classes.tab} label="Followers" />
+        <Tab className={classes.tab} label="Followering" />
       </Tabs>
-      <TabPanel value={tabValue} index={0}>
-        {renderFollower}
-        <InfiniteLoading onLoadMore={onFollowerLoadMore} isEndOfData={followersPage === -1} />
-      </TabPanel>
-      <TabPanel value={tabValue} index={1}>
-        {renderFriend}
-        <InfiniteLoading onLoadMore={onFriendsLoadMore} isEndOfData={friendsPage === -1} />
-      </TabPanel>
+      <div className={classes.panelCotainer}>
+        <TabPanel value={tabValue} index={0}>
+          {followersPage === 0 && <CircularProgress color="inherit" />}
+          {renderFollower}
+          <InfiniteLoading onLoadMore={onFollowerLoadMore} isEndOfData={friendsPage < 1} />
+        </TabPanel>
+        <TabPanel value={tabValue} index={1}>
+          {friendsPage === 0 && <CircularProgress color="inherit" />}
+          {renderFriend}
+          <InfiniteLoading onLoadMore={onFriendsLoadMore} isEndOfData={friendsPage < 1} />
+        </TabPanel>
+      </div>
     </div>
   );
 }

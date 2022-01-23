@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
-import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
 
-import useStyle from './Tags.style';
+import useStyle, { StyledButton } from './Home.style';
 
 const sliderMarker = [{
   value: 0,
@@ -62,12 +62,14 @@ function Home() {
     <div className={classes.container}>
       <Typography variant="h2">Search</Typography>
       <form onSubmit={onSubmit}>
-        <TextField variant="outlined" onChange={onValueChange} value={searchValue} />
+        <TextField className={classes.input} variant="outlined" fullWidth placeholder="keyword" onChange={onValueChange} value={searchValue} />
+
+        <Divider />
 
         <Typography variant="h2"># Of Results Per Page</Typography>
 
-        <Typography variant="h3">
-          {resultNumber}
+        <Typography variant="body1">
+          <span className={classes.resultNumber}>{resultNumber}</span>
           {' '}
           results
         </Typography>
@@ -78,7 +80,11 @@ function Home() {
           onChange={onSliderChange}
           marks={sliderMarker}
         />
-        <Button variant="contained" type="submit">Search</Button>
+
+        <Divider />
+
+        <StyledButton type="submit">SEARCH</StyledButton>
+
       </form>
     </div>
   );

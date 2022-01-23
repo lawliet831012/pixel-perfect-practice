@@ -18,7 +18,7 @@ const initailize = function* initailizeTagData() {
     ]);
     const newState = {
       followers: followerRes.data.data,
-      followerPage: followerRes.data.totalPages === page ? -1 : 1,
+      followersPage: followerRes.data.totalPages === page ? -1 : 1,
       friends: friendsRes.data.data,
       friendsPage: friendsRes.data.totalPages === page ? -1 : 1,
     };

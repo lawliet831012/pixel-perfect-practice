@@ -1,19 +1,33 @@
-import { makeStyles } from '@material-ui/styles';
+import makeStyles from '@mui/styles/makeStyles';
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
   pageContainer: {
-    display: 'flex',
-    flexDirection: 'row',
     width: '100%',
-    height: '100vh',
+    position: 'relative',
   },
   navBar: {
+    position: 'absolute',
+    height: '100vh',
+    left: 0,
+    top: 0,
 
   },
   outlet: {
-    flexGrow: 1,
+    [theme.breakpoints.down('md')]: {
+      paddingTop: 70,
+      paddingBottom: 66,
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingLeft: 80,
+    },
+    [theme.breakpoints.up('lg')]: {
+      paddingRight: 375,
+    },
   },
   friendsTab: {
-
+    position: 'absolute',
+    height: '100vh',
+    right: 0,
+    top: 0,
   },
 }));

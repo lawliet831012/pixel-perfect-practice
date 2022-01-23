@@ -8,8 +8,8 @@ function TagCard({ count, name }) {
   const classes = useStyle();
   return (
     <div className={classes.container}>
-      <div><Typography>{name}</Typography></div>
-      <Typography>{name}</Typography>
+      <div className={classes.cardBackground}><Typography variant="h2">{name}</Typography></div>
+      <Typography variant="body1">{name}</Typography>
       <Typography>
         {count}
         {' '}

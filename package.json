@@ -5,8 +5,8 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
-    "@material-ui/styles": "^4.11.4",
     "@mui/material": "^5.3.0",
+    "@mui/styles": "^5.3.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -28,8 +28,7 @@
     "eject": "react-scripts eject",
     "_lint": "eslint --config ./.eslintrc.js --ext js --ext jsx",
     "lint": "yarn _lint ./src",
-    "lint-fix": "yarn _lint --fix ./src",
-    "prepare": "husky install"
+    "lint-fix": "yarn _lint --fix ./src"
   },
   "browserslist": {
     "production": [

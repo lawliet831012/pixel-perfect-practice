@@ -9,7 +9,7 @@ import FollowersTab from '../components/FollowersTab';
 
 function Layout() {
   const theme = useTheme();
-  const showFriendsTab = useMediaQuery(theme.breakpoints.up('sm'));
+  const showFriendsTab = useMediaQuery(theme.breakpoints.up('lg'));
   const classes = useStyles();
 
   return (
