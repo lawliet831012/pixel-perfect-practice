@@ -18,7 +18,7 @@ const initailize = function* initailizeTagData({ payload }) {
       keyword,
       pageSize,
       result: response.data.data,
-      resultPage: response.data.totalPages === page ? -1 : 1,
+      resultPage: response.data.totalPages === 0 ? -1 : 1,
     };
     yield put(searchActions.update(newState));
   } catch (error) {

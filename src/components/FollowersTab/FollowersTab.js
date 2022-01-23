@@ -61,8 +61,8 @@ function Friends() {
   return (
     <div className={classes.container}>
       <Tabs value={tabValue} onChange={onTabChange} className={classes.tabBar}>
-        <StyledTab label="Followers" />
-        <StyledTab label="Followering" />
+        <StyledTab component="span" label="Followers" />
+        <StyledTab component="span" label="Followering" />
       </Tabs>
       <div className={classes.panelCotainer}>
         <TabPanel value={tabValue} index={0}>

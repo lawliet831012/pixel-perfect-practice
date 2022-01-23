@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
     maxWidth: 765,
     '& h2': {
       fontSize: theme.palette.text.big,
-      marginBottom: 20,
+      marginBottom: 21,
     },
     '& > p': {
       fontSize: theme.palette.text.medium,
@@ -39,7 +39,7 @@ export const StyledInput = styled(TextField)(({ theme }) => ({
 }));
 
 export const StyledButton = styled(Button)(({ theme }) => ({
-  marginTop: 335,
+  marginTop: 305,
   maxWidth: 343,
   fontWeight: 'bold',
   fontSize: theme.palette.text.small,

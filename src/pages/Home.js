@@ -13,19 +13,19 @@ const sliderMarker = [{
   label: '3',
 },
 {
-  value: 18,
+  value: 18.75,
   label: '6',
 },
 {
-  value: 36,
+  value: 37.5,
   label: '9',
 },
 {
-  value: 54,
+  value: 56.25,
   label: '12',
 },
 {
-  value: 72,
+  value: 75,
   label: '15',
 },
 {

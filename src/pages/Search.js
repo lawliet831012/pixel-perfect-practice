@@ -47,7 +47,13 @@ function Search() {
     <div className={classes.container}>
       <PageBackBar text={isMobile ? 'Home Page' : 'Results'} />
       {isMobile && <Typography variant="h2">Results</Typography>}
-      <Grid container spacing={2} className={classes.cardsContainer}>
+      <Grid
+        justifyContent="center"
+        alignItems="center"
+        container
+        spacing={0}
+        className={classes.cardsContainer}
+      >
         {!resultPage ? <CircularProgress color="inherit" /> : renderResultCrads}
       </Grid>
       <InfiniteLoading onLoadMore={onLoadMore} isEndOfData={resultPage < 1} />

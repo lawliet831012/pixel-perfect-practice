@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     width: '100%',
-    marginBottom: 16,
+    marginBottom: 12.5,
     '& > button': {
       '& > span': {
         fontSize: theme.palette.text.min,

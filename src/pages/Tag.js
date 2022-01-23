@@ -33,7 +33,12 @@ function Tags() {
     <div className={classes.container}>
       {isMobile && <PageBackBar text="Home Page" /> }
       <Typography variant="h2">Tags</Typography>
-      <Grid container spacing={2}>
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        spacing={0}
+      >
         {!tags.length ? <CircularProgress color="inherit" /> : renderTagCards}
       </Grid>
     </div>

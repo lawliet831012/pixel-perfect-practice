@@ -4,16 +4,17 @@ export default makeStyles((theme) => ({
   container: {
     maxWidth: 875,
     margin: 'auto',
-    paddingTop: 80,
+    paddingTop: 84,
     [theme.breakpoints.down('md')]: {
-      paddingTop: 70,
-      padding: 20,
+      paddingTop: 90,
     },
     '& > h2': {
       marginBottom: 24,
+      marginLeft: 8,
       fontSize: 30,
       [theme.breakpoints.down('md')]: {
         fontSize: theme.palette.text.big,
+        paddingLeft: 12,
       },
     },
   },

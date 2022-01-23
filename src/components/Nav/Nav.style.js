@@ -24,7 +24,7 @@ export default makeStyles((theme) => ({
   navBar: {
     zIndex: 99,
     position: 'fixed',
-    paddingTop: 88,
+    paddingTop: 68,
     width: 80,
     height: '100vh',
     background: theme.palette.common.black,

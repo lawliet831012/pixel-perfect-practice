@@ -20,6 +20,7 @@ export default makeStyles((theme) => ({
       marginRight: 23,
       [theme.breakpoints.down('md')]: {
         marginLeft: 23,
+        marginRight: 8,
       },
     },
   },

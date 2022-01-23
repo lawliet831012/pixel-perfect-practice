@@ -24,6 +24,7 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          textTransform: 'none',
           fontWeight: 'bold',
           border: '2px solid #ffffff',
           borderRadius: 4,
@@ -105,7 +106,9 @@ const theme = createTheme({
     MuiTab: {
       styleOverrides: {
         root: {
+          textTransform: 'none',
           fontSize: 16,
+          fontWeight: 'bold',
           color: '#929292',
           '&.Mui-selected': {
             color: '#ffffff',

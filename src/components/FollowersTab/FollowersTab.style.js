@@ -20,6 +20,4 @@ export default makeStyles((theme) => ({
 
 export const StyledTab = styled(Tab)(() => ({
   width: '50%',
-  fontSize: 16,
-  fontWeight: 'bold',
 }));
