@@ -4,7 +4,7 @@ import { Routes as RouteWrapper, Route } from 'react-router-dom';
 import Layout from './Layout';
 import Home from '../pages/Home';
 import Search from '../pages/Search';
-import Tags from '../pages/Tags';
+import Tags from '../pages/Tag';
 
 function Routes() {
   return (

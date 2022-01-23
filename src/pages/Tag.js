@@ -8,7 +8,7 @@ import useCheckScreen from '../components/useCheckScreen';
 import PageBackBar from '../components/PageBackBar';
 import TagCard from '../components/TagCard';
 import * as tagsActions from '../redux/actions/tagsActions';
-import useStyle from './Tags.style';
+import useStyle from './Tag.style';
 
 function Tags() {
   const classes = useStyle();
