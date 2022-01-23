@@ -11,10 +11,6 @@ export default makeStyles((theme) => ({
     width: '100%',
     marginTop: 17,
   },
-  tab: {
-    width: '50%',
-
-  },
   panelCotainer: {
     overflow: 'auto',
     padding: '32px 16px',
@@ -23,5 +19,7 @@ export default makeStyles((theme) => ({
 }));
 
 export const StyledTab = styled(Tab)(() => ({
-
+  width: '50%',
+  fontSize: 16,
+  fontWeight: 'bold',
 }));

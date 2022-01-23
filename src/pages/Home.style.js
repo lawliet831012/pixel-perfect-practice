@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 export default makeStyles((theme) => ({
   container: {
     margin: 'auto',
-    padding: '54px 20px 0',
+    padding: '56px 20px 0',
     maxWidth: 765,
     '& h2': {
       fontSize: theme.palette.text.big,

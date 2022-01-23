@@ -7,7 +7,13 @@ export default makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     width: '100%',
-    marginBottom: 20,
+    marginBottom: 16,
+    '& > button': {
+      '& > span': {
+        fontSize: theme.palette.text.min,
+        fontWeight: 'normal',
+      },
+    },
   },
   avater: {
     height: 40,
@@ -28,8 +34,7 @@ export default makeStyles((theme) => ({
   },
 }));
 
-export const StyledButton = styled(Button)(({ theme }) => ({
-  height: 30,
+export const StyledButton = styled(Button)(() => ({
+  height: 29,
   padding: '8px 10px',
-  fontSize: theme.palette.text.min,
 }));

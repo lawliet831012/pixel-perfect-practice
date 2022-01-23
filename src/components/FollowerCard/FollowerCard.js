@@ -40,7 +40,9 @@ function FollowerCard({
         </Typography>
       </div>
 
-      <StyledButton variant={isFollowing ? 'contained' : 'outlined'}>{isFollowing ? 'Following' : 'Follow'}</StyledButton>
+      <StyledButton size="sm" variant={isFollowing ? 'contained' : 'outlined'}>
+        <span>{isFollowing ? 'Following' : 'Follow'}</span>
+      </StyledButton>
     </div>
   );
 }

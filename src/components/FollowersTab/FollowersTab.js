@@ -3,14 +3,13 @@ import React, {
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import CircularProgress from '@mui/material/CircularProgress';
 
 import InfiniteLoading from '../InfiniteLoading/InfiniteLoading';
 import * as followerActions from '../../redux/actions/followerActions';
 import FollowerCard from '../FollowerCard';
 import TabPanel from './TabPanel';
-import useStyle from './FollowersTab.style';
+import useStyle, { StyledTab } from './FollowersTab.style';
 
 function Friends() {
   const classes = useStyle();
@@ -62,8 +61,8 @@ function Friends() {
   return (
     <div className={classes.container}>
       <Tabs value={tabValue} onChange={onTabChange} className={classes.tabBar}>
-        <Tab className={classes.tab} label="Followers" />
-        <Tab className={classes.tab} label="Followering" />
+        <StyledTab label="Followers" />
+        <StyledTab label="Followering" />
       </Tabs>
       <div className={classes.panelCotainer}>
         <TabPanel value={tabValue} index={0}>
